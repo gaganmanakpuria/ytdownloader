@@ -8,7 +8,7 @@ from django.contrib.auth import login ,logout,authenticate
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
 import os.path
-import pafy
+import pafy,time
 
 # Create your views here.
 
@@ -92,6 +92,7 @@ def down(r,nm):
     st=nm
     if r.method=="POST":
         media_path = settings.MEDIA_ROOT
+        time.sleep(5)
         os.remove(media_path+"/"+st)
         return HttpResponseRedirect("/")   
     
