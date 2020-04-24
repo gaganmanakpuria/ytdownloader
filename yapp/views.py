@@ -67,32 +67,12 @@ def user_logout(r):
 
 def down(r,nm):
     
-    # media_path = settings.MEDIA_ROOT
-    # a=subprocess.check_output("dir /o-d /t:c " ,shell=True,cwd=media_path).decode()
-    # b=a.split("\n")
-
-    # li=[]
-    # for i in range(len(b)):
-    #     if len(b[i][28:])==0:
-    #         pass
-    #     else:
-                    
-    #         li.append(b[i][28:])
-    # d=[]
-    # for j in range(2,len(li)):
-    #     d.append(li[j])
-    # st = d[0].split(" ")[-1]
-    
-    # media_path = settings.MEDIA_ROOT
-    # print(media_path)
-    # nm=pafy.new(txt).title
-    # nm=nm[:10]+".mp4"
-    # if " " in nm:
-    #     nm=nm.replace(" ","_")
+   
     st=nm
+
     if r.method=="POST":
         media_path = settings.MEDIA_ROOT
-        # time.sleep(5)
+        time.sleep(5)
         os.remove(media_path+"/"+st)
         # return HttpResponseRedirect("/")   
     
