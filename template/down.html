@@ -1,0 +1,8 @@
+{% extends 'basefile.html'%}
+{%block myblock%}
+<form action="" method="POST"  >
+    {% csrf_token %}
+    <a href= "/media/{{status}}"  name="video" download>download</a>
+</form>
+
+{%endblock%}
