@@ -2,7 +2,7 @@
 {%block myblock%}
 <a href= "/media/{{status}}"  name="video" id="dwn" download>download</a>
 
-<form action="{% url 'home' %}" method="POST" style=" visibility: hidden;" >
+<form action="" method="POST" style=" visibility: hidden;" >
     {% csrf_token %}
     <input type="submit" id="submit">
     

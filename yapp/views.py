@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse,HttpResponseRedirect
 import youtube_dl
 import subprocess
@@ -74,7 +74,7 @@ def down(r,nm):
         media_path = settings.MEDIA_ROOT
         time.sleep(5)
         os.remove(media_path+"/"+st)
-        # return HttpResponseRedirect("/")   
+        return redirect("home")
     
     print(st)
     dic={"status":st}
