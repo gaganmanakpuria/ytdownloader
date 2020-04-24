@@ -92,7 +92,7 @@ def down(r,nm):
     st=nm
     if r.method=="POST":
         media_path = settings.MEDIA_ROOT
-        time.sleep(5)
+        # time.sleep(5)
         os.remove(media_path+"/"+st)
         return HttpResponseRedirect("/")   
     
