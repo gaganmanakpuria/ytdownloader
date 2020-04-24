@@ -66,7 +66,7 @@ def user_logout(r):
 
 
 def down(r):
-    
+    TXT=TXT
     # media_path = settings.MEDIA_ROOT
     # a=subprocess.check_output("dir /o-d /t:c " ,shell=True,cwd=media_path).decode()
     # b=a.split("\n")
