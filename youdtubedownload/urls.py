@@ -25,7 +25,7 @@ urlpatterns = [
     path('c/', views.contactview,name="cont"),
     path("user_login/",views.user_login,name="user_login"),
     path("user_logout/",views.user_logout,name="user_logout"),
-    path("down/",views.down,name="down"),
+    path("down/<str:nm>",views.down,name="down"),
 
    
 

@@ -36,7 +36,7 @@ def index(r):
         
         # print("DONE")
        
-        return HttpResponseRedirect("down")
+        return HttpResponseRedirect("down/{}".format(nm))
 
     return render(r,"home.html")
 
@@ -65,8 +65,8 @@ def user_logout(r):
 
 
 
-def down(r):
-    txt=TXT
+def down(r,nm):
+    
     # media_path = settings.MEDIA_ROOT
     # a=subprocess.check_output("dir /o-d /t:c " ,shell=True,cwd=media_path).decode()
     # b=a.split("\n")
@@ -83,12 +83,12 @@ def down(r):
     #     d.append(li[j])
     # st = d[0].split(" ")[-1]
     
-    media_path = settings.MEDIA_ROOT
-    print(media_path)
-    nm=pafy.new(txt).title
-    nm=nm[:10]+".mp4"
-    if " " in nm:
-        nm=nm.replace(" ","_")
+    # media_path = settings.MEDIA_ROOT
+    # print(media_path)
+    # nm=pafy.new(txt).title
+    # nm=nm[:10]+".mp4"
+    # if " " in nm:
+    #     nm=nm.replace(" ","_")
     st=nm
     if r.method=="POST":
         media_path = settings.MEDIA_ROOT
