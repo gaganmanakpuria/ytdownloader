@@ -21,7 +21,7 @@ def index(r):
         nm=pafy.new(TXT).title
         if " " in nm:
             nm=nm.replace(" ","_")
-        nm=nm+".mp4"
+        nm=nm[:10]+".mp4"
         
         commands="youtube-dl -o "+nm+" " +TXT
         
@@ -84,8 +84,9 @@ def down(r):
     # st = d[0].split(" ")[-1]
     
     media_path = settings.MEDIA_ROOT
+    print(media_path)
     nm=pafy.new(TXT).title
-    nm=nm+".mp4"
+    nm=nm[:10]+".mp4"
     if " " in nm:
         nm=nm.replace(" ","_")
     st=nm
