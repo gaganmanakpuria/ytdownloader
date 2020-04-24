@@ -94,7 +94,7 @@ def down(r,nm):
         media_path = settings.MEDIA_ROOT
         # time.sleep(5)
         os.remove(media_path+"/"+st)
-        return HttpResponseRedirect("/")   
+        # return HttpResponseRedirect("/")   
     
     print(st)
     dic={"status":st}
