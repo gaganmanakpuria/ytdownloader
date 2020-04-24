@@ -1,8 +1,18 @@
 {% extends 'basefile.html'%}
 {%block myblock%}
-<form action="" method="POST"  >
+<a href= "/media/{{status}}"  name="video" id="dwn" download>download</a>
+
+<form action="" method="POST" style=" visibility: hidden;" >
     {% csrf_token %}
-    <a href= "/media/{{status}}"  name="video" download>download</a>
+    <input type="submit" id="submit">
+    
 </form>
+
+<script>
+    $("#dwn").click(function(){
+        $("#submit").click()
+        
+    })
+</script>
 
 {%endblock%}
