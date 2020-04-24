@@ -14,7 +14,7 @@ import pafy
 
 def index(r):
     if r.method=="POST":
-        print(r.POST)
+        # print(r.POST)
         global TXT
         TXT=r.POST['ytxt']
         media_path = settings.MEDIA_ROOT
@@ -34,7 +34,7 @@ def index(r):
         # k=videos(av=a)
         # k.save()
         
-        print("DONE")
+        # print("DONE")
        
         return HttpResponseRedirect("down")
 
@@ -67,7 +67,7 @@ def user_logout(r):
 
 def down(r):
     
-    media_path = settings.MEDIA_ROOT
+    # media_path = settings.MEDIA_ROOT
     # a=subprocess.check_output("dir /o-d /t:c " ,shell=True,cwd=media_path).decode()
     # b=a.split("\n")
 
@@ -82,6 +82,7 @@ def down(r):
     # for j in range(2,len(li)):
     #     d.append(li[j])
     # st = d[0].split(" ")[-1]
+    
     media_path = settings.MEDIA_ROOT
     nm=pafy.new(TXT).title
     nm=nm+".mp4"
