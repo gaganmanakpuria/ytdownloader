@@ -66,7 +66,7 @@ def user_logout(r):
 
 
 def down(r):
-    TXT=TXT
+    txt=TXT
     # media_path = settings.MEDIA_ROOT
     # a=subprocess.check_output("dir /o-d /t:c " ,shell=True,cwd=media_path).decode()
     # b=a.split("\n")
@@ -85,7 +85,7 @@ def down(r):
     
     media_path = settings.MEDIA_ROOT
     print(media_path)
-    nm=pafy.new(TXT).title
+    nm=pafy.new(txt).title
     nm=nm[:10]+".mp4"
     if " " in nm:
         nm=nm.replace(" ","_")
