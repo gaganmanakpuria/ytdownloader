@@ -92,7 +92,8 @@ def down(r,nm):
     st=nm
     if r.method=="POST":
         media_path = settings.MEDIA_ROOT
-        os.remove(media_path+"/"+st)   
+        os.remove(media_path+"/"+st)
+        return redirect(r,"home.html")   
     
     print(st)
     dic={"status":st}
