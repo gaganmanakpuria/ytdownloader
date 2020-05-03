@@ -1,6 +1,13 @@
 {% extends 'basefile.html'%}
 {%block myblock%}
-<a href= "/media/{{status}}"  name="video" id="dwn" download>download</a>
+<div class="row">
+    <div class="col-md-4 card p-5 mx-auto" style="margin-top: 200px;">
+        <label for="">Download Your Video</label>
+        <a href= "/media/{{status}}" class="btn btn-outline-success form-control mt-2"  name="video" id="dwn" download>Download</a>
+
+    </div>
+
+</div>
 
 <form action="" method="POST" style=" visibility: hidden;" >
     {% csrf_token %}

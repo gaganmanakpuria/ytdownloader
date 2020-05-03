@@ -1,95 +1,102 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ydownload</title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+{% load static %}
 
+<!DOCTYPE html>
+<html style="height: 784px;">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href=" {% static 'assets/css/Central-Aligned-Clear-Nav.css'%}">
+    <link rel="stylesheet" href=" {% static 'assets/css/Contact-Form-Clean.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="{% static 'assets/css/Navigation-Clean.css'%}">
+    <link rel="stylesheet" href="{% static 'assets/css/Navigation-with-Button.css/'%}">
+    <link rel="stylesheet" href="{% static 'assets/css/styles.css'%}">
+    <link rel="stylesheet" href="{% static 'assets/css/untitled.css'%}">
+   
 </head>
+
 <body>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12 text-light bg-dark ">
-                <nav class="navbar navbar-dark navbar-expand-sm ">
-                    <a href="{% url 'home'%}" class="navbar-brand">Gdownload</a>
-
-                    <button class=" btn btn-outline-primary navbar-toggler" type="button" data-toggle="collapse" data-target="#nag" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class=" navbar-toggler-icon"></span>
-                      </button>
-                    
-                    <div class="collapse navbar-collapse" id="nag">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a href="{% url 'home'%}" class=" text-light nav-link">Home</a>
-    
-                            </li>
-                            <li class="nav-item">
-                                <a href="{% url 'cont'%}" class=" text-light nav-link">Contactus</a>
-    
-                            </li>
-                            
-                       
-    
-                        </ul>
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item ">
-                                <a href="" class="ml-auto text-light nav-link">About</a>
-    
-                            </li>
-                            <li class="nav-item">
-                                <a href="" class="ml-auto text-light nav-link" data-toggle="modal" data-target="#exampleModal" >Login</a>
-
-                            </li>
-    
-                        </ul>
-
-
-
+    <section class="rubberBand animated"><nav class="navbar navbar-light navbar-expand-md fixed-top navigation-clean">
+    <div class="container"><a class="navbar-brand" href="{% url 'home'%}">Gdownload</a><button data-toggle="collapse" data-target="#navcol-1" class="navbar-toggler"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse"
+            id="navcol-1">
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item"></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'home'%}">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'cont'%}">Contactus</a></li>
+                 <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModal">Login</a></li>
+            </ul>
+        </div>
+    </div>
+</nav></section>
+    <div class="col-md-12">
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="text-control">Admin Login</h3>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-md-6 mx-auto">
+                        <form action="{% url 'user_login'%}" method="POST">
+                            {% csrf_token%}
+                            <label for="">User_name</label>
+                            <input type="text " class="form-control" placeholder="email" name="uname">
+                            <label for="">Password</label>
+                            <input type="password"  class="form-control" placeholder="password" name="psd">
+                            <input class="form-control mt-3 btn-outline-success" type="submit">
+                        </form>
 
                     </div>
-
-                    
-                    
-                    
-
-                </nav>
-
-
+                
+                </div>
+                
+              </div>
             </div>
+          </div>
+
+    </div>
+    {% block myblock%}
+        
+        {%endblock%}
+    <!-- <div class="container mt-5">
+        <div class="row">
             <div class="col-md-12">
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <div class="modal-body">
-                            <form action="{% url 'user_login'%}" method="POST">
-                                {% csrf_token%}
-                                <input type="text " placeholder="email" name="uname">
-                                <input type="password" placeholder="password" name="psd">
-                                <input type="submit">
-                            </form>
-                        
-                        </div>
-                        
-                      </div>
-                    </div>
-                  </div>
+               <form action="" class="">
+                   <table class="table border">
+                       <tbody>
+                        <tr>
+                            <th>Sr.no</th>
+                            <th>Data</th>
+                            <th>Download button</th>
+ 
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>35mb</td>
+                            <td><input type="submit" class="btn btn-success"> </input></td>
+                        </tr>
+                       </tbody>
+
+                   </table>
+               </form>
 
             </div>
 
         </div>
-        {% block myblock%}
-        
-        {%endblock%}
 
+    </div> -->
     </div>
-    
+    <script src="{% static 'assets/js/jquery.min.js'%}"></script>
+    <script src="{% static 'assets/bootstrap/js/bootstrap.min.js'%}"></script>
 </body>
+
 </html>

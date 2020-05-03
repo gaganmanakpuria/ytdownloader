@@ -1,11 +1,11 @@
 {% extends 'basefile.html' %}
 {% block myblock%}
 <div class="row">
-    <div class=" bg-danger py-4 col-md-5 mx-auto mt-3">
-        <div >
+    <div class="  py-4 col-md-5 mx-auto mt-5">
+        <div class="mt-4" >
             <form action="" method="POST">
                 {%csrf_token%}
-                <div class="card bg-dark text-danger">
+                <div class=" text-dark">
                     <div class="form-group mb-2">
                         <label for="" >Enter Name</label>
                         <input type="text" name="cname" class="form-control" placeholder="Enter Name">
@@ -18,7 +18,7 @@
                     </div>
                     <div class="form-group mb-4">
                         <label for="" ></label>
-                        <textarea type="text" name="cmsg" class="form-control"  placeholder="Enter Message"></textarea>
+                        <textarea type="text" name="cmsg" class="form-control" rows="5" placeholder="Enter Message"></textarea>
 
                     </div>
                     <div class="form-group">

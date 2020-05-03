@@ -2,7 +2,26 @@
 
 
 {%block myblock%}
-<div class="row mt-5 " >
+<div class="border rounded1" style="height: 298px;background-color: #e242db;"></div>
+    <div class="col-md-4 mx-auto" style="margin-top: -150px;">
+        <form class="   jello animated" method="post">
+            {% csrf_token %}
+            <h2 class="text-center">Gdownload</h2>
+            <label for="">Enter your link here</label>
+            <input type="text" name="ytxt" class="form-control"id="inp" >
+            <input type="submit" id="smt" placeholder="Download" class=" mt-5 btn btn-success form-contol" > 
+        </form>
+
+    </div>
+
+
+
+
+
+
+
+
+<!-- <div class="row mt-5 " >
     <div class="col-md-12   ">
         
 
@@ -30,5 +49,5 @@
 
     </div>
 
-</div>
+</div> -->
 {%endblock%}
